@@ -1,0 +1,2 @@
+docker build -t php-test .
+docker run --name php-test-container --mount type=bind,source=/Users/stoo/udemy/php-1,target=/usr/share/nginx/html/playground  -d -p 8080:80 -p 9000:9000 php-test

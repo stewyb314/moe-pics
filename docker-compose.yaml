@@ -1,0 +1,15 @@
+web:
+ image: nginx:latest
+ ports:
+        - "8080:80"
+ volumes:
+        - ./api/moe-pics:/moe-pics
+        - ./site.conf:/etc/nginx/conf.d/default.conf
+ links:
+         - php
+php:
+        image: stew:latest
+        volumes:
+                - ./api/moe-pc:/moe-pc
+
+
